@@ -1,10 +1,23 @@
 /*
-  Implement a function `isPalindrome` which takes a string as argument and returns true/false as its result.
-  Note: the input string is case-insensitive which means 'Nan' is a palindrom as 'N' and 'n' are considered case-insensitive.
+Write a function that calculates the time (in seconds) it takes for the JS code to calculate sum from 1 to n, given n as the input.
+Try running it for
+1. Sum from 1-100
+2. Sum from 1-100000
+3. Sum from 1-1000000000
+Hint - use Date class exposed in JS
+There is no automated test for this one, this is more for you to understand time goes up as computation goes up
 */
 
-function isPalindrome(str) {
-  return true;
+function calculateTime(n) {
+  const currentDate = new Date();
+  let start=currentDate.getTime();
+  let t=0;
+  for(let i=1;i<=n;i++){
+      t=t+i;
+  }
+  let end=currentDate.getTime();
+  return t+" "+end+" "+start;
 }
-
-module.exports = isPalindrome;
+console.log(calculateTime(100));
+console.log(calculateTime(100000));
+console.log(calculateTime(10000000000));
